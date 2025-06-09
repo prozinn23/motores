@@ -1,10 +1,13 @@
+using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     
-    public float velocidade = 40;
+    public float velocidade = 20;
     public float forcaDoPulo = 4;
+    
+    private bool noChao = false;
     
     private SpriteRenderer sprite;
     private Rigidbody2D rb;
@@ -15,24 +18,42 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+       
     void Update()
     {
         if (Input.GetKey(KeyCode.A))
         {
-            GameObject.transform.position += new Vector3(-velocidade * Time.deltaTime,0,0);
+            gameObject.transform.position += new Vector3(-velocidade * Time.deltaTime,0,0);
             sprite.flipX = true;
         }
         
         if (Input.GetKey(KeyCode.D))
         {
-            GameObject.transform.position += new Vector3(velocidade * Time.deltaTime,0,0);
+            gameObject.transform.position += new Vector3(velocidade * Time.deltaTime,0,0);
             sprite.flipX = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && noChao == true)
         {
             rb.AddForce(new Vector2(0,forcaDoPulo), ForceMode2D.Impulse);
         }
 
+    }
+
+    void OnCollisionEnter2D(Collision2D colisao)
+    {
+        //if (colisao.gameObject.tag == "Chao")
+        if(colisao.gameObject.CompareTag("Chao"))
+        {
+            noChao = true;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D colisao)
+    {
+        if(colisao.gameObject.CompareTag("Chao"))
+        {
+            noChao = false;
+        }
     }
 }

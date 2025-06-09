@@ -1,7 +1,4 @@
 using UnityEngine;
-
-public class AdivinhaNumeros : MonoBehaviour
-{using UnityEngine;
 using System;
 using Unity.VisualScripting;
 using Random = System.Random;
