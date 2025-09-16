@@ -15,6 +15,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Player.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/dano.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -95,6 +96,7 @@
       <workItem from="1748266673979" duration="2983000" />
       <workItem from="1748870442930" duration="4034000" />
       <workItem from="1749475513209" duration="2881000" />
+      <workItem from="1758024370661" duration="1659000" />
     </task>
     <servers />
   </component>
