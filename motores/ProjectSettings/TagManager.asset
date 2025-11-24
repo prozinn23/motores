@@ -7,6 +7,7 @@ TagManager:
   - chao
   - Chao
   - armadilhas
+  - inimigo
   layers:
   - Default
   - TransparentFX
